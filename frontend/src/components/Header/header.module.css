@@ -1,0 +1,38 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 500px;
+  padding: 16px 0;
+  border-bottom: 1px solid #a48c00;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav ul li {
+  list-style: none;
+}
+
+.nav a {
+  color: #a48c00;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+.nav a:hover {
+  color: #e2940d;
+}
+
+.nav .logo {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0 10px;
+  font-family: "Lobster", cursive;
+}

@@ -1,0 +1,38 @@
+.footer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 16px 0;
+  gap: 24px;
+  border-top: 1px solid #a48c00;
+}
+
+.footer a {
+  color: #a48c00;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+.footer a:hover {
+  color: #e2940d;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0 10px;
+  font-family: "Lobster", cursive;
+}
+
+.copyright {
+  font-size: 0.9em;
+  color: #6c757d;
+}
