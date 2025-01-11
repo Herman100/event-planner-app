@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  color: #836230;
+}
+
+.landingPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.landingPage h1 {
+  font-size: 36px;
+  padding: 8px 0 0;
+  margin: 0;
+}
+
+.landingPage p {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #836230b1;
+  line-height: 1.5;
+  max-width: 500px;
+}
+
+.landingPage button {
+  margin: 16px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #836230;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.landingPage button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.landingPage button:hover {
+  background-color: #fff;
+  border: 1px solid #836230;
+}
+
+.landingPage button:hover a {
+  color: #836230;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 5px;
+  padding: 32px;
+}

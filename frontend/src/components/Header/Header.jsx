@@ -16,7 +16,7 @@ export default function Header() {
           <Link href="/create">Create Event</Link>
         </li>
         <li className={styles.navItem}>
-          <Link href="/all">All Events</Link>
+          <Link href="/events">All Events</Link>
         </li>
       </ul>
     </nav>

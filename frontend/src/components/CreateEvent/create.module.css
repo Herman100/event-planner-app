@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  color: #836230;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.container form .inputGroup {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.container form .inputGroup label {
+  font-size: 1.2rem;
+}
+
+.container form .inputGroup input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #836230;
+}
+
+.container form .inputGroup input:focus {
+  outline-color: #836230;
+}

@@ -1,4 +1,6 @@
+import Header from "@/components/Header/Header";
 import "./globals.css";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -28,7 +30,11 @@ export default function RootLayout({ children }) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
