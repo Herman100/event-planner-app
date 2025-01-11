@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const eventRoutes = require("./routes/events");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
 
@@ -17,25 +19,18 @@ app.use(bodyParser.json());
 const URI = process.env.MONGODB_URI;
 
 // MongoDB Connection
-mongoose
-  .connect(URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.error("Error connecting to MongoDB:", err.message);
-  });
+async function main() {
+  try {
+    console.log("Connecting to MongoDB");
+    await mongoose.connect(`${URI}`);
+    console.log("Successfully connected to Database");
+    // Declaring Port and Use of Server
+    app.listen(5000, () => {
+      console.log("Server is running on port 5000");
+    });
+  } catch (error) {
+    console.log("Error connecting to MongoDB", error);
+  }
+}
 
-// Basic route for testing
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
-
-// Start the server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+main();
