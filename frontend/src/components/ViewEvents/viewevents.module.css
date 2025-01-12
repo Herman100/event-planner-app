@@ -1,0 +1,112 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  color: #836230;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #836230;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.sortSelect {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #836230;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #836230;
+}
+
+.sortLabel {
+  font-size: 16px;
+  color: #836230;
+  font-weight: bold;
+}
+
+.eventList {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.eventItem {
+  border: 1px solid #836230;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eventInfo {
+  flex: 1;
+}
+
+.eventName {
+  font-size: 24px;
+  color: #836230;
+}
+
+.eventHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eventDetails {
+  display: flex;
+  gap: 10px;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.iconButton .icon {
+  color: #836230;
+  font-size: 32px;
+  margin: 8px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.paginationButton {
+  padding: 5px 10px;
+  border: 1px solid #836230;
+  background-color: white;
+  color: #836230;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

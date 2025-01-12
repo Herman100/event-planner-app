@@ -1,21 +1,48 @@
 "use client";
-import React, { useState } from "react";
-import styles from "./create.module.css";
+import React, { useEffect, useState } from "react";
+import styles from "./update.module.css";
+import LoadingSpinner from "../LoadingUI/LoadingSpinner";
+import { useParams, useRouter } from "next/navigation";
 
-export default function CreateEvent() {
+export default function UpdateEvent() {
+  const [loading, setLoading] = useState(true);
   const [eventName, setEventName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [location, setLocation] = useState("");
 
+  const id = useParams().id;
+  const router = useRouter();
+
+  useEffect(() => {
+    const fetchEvent = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/events/${id}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch event");
+        }
+        const data = await response.json();
+        setEventName(data.eventName);
+        setDate(data.date.split("T")[0]);
+        setTime(data.time);
+        setLocation(data.location);
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvent();
+  }, [id]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = { eventName, date, time, location };
-    console.log("Data:", data);
 
     try {
-      const response = await fetch("http://localhost:5000/events", {
-        method: "POST",
+      const response = await fetch(`http://localhost:5000/events/${id}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
@@ -23,23 +50,23 @@ export default function CreateEvent() {
       });
 
       if (response.ok) {
-        setEventName("");
-        setDate("");
-        setTime("");
-        setLocation("");
-        alert("Event created successfully");
-        const result = await response.json();
-        console.log("Event created:", result);
+        alert("Event updated successfully");
+        router.push("/events");
       } else {
-        console.error("Failed to create event");
+        console.error("Failed to update event");
       }
     } catch (error) {
       console.error("Error:", error);
     }
   };
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
   return (
     <div className={styles.container}>
-      <h2>Create Event</h2>
+      <h2>Update Event</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.inputGroup}>
           <label htmlFor="eventName">Event Name</label>
@@ -82,7 +109,7 @@ export default function CreateEvent() {
           />
         </div>
         <button type="submit" className={styles.submit}>
-          Create Event
+          Update Event
         </button>
       </form>
     </div>
