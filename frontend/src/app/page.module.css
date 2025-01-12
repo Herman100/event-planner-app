@@ -62,3 +62,74 @@
   border-radius: 5px;
   padding: 32px;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .landingPage h1 {
+    font-size: 28px;
+  }
+
+  .landingPage p {
+    font-size: 14px;
+  }
+
+  .landingPage button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .image {
+    padding: 24px;
+    width: 700px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landingPage {
+    max-width: 320px;
+  }
+  .landingPage h1 {
+    font-size: 24px;
+  }
+
+  .landingPage p {
+    font-size: 12px;
+  }
+
+  .landingPage button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .image {
+    padding: 16px;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 375px) {
+  .landingPage {
+    width: 320px;
+  }
+
+  .landingPage h1 {
+    font-size: 20px;
+  }
+
+  .landingPage p {
+    font-size: 10px;
+  }
+
+  .landingPage button {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .image {
+    padding: 12px;
+    width: 250px;
+    height: 150px;
+  }
+}
