@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const currentURL = usePathname();
-  console.log(currentURL);
 
   return (
     <nav className={styles.nav}>
