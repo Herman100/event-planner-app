@@ -14,13 +14,16 @@ export default function CreateEvent() {
     console.log("Data:", data);
 
     try {
-      const response = await fetch("http://localhost:5000/events", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://event-planner-app-vhm3.onrender.com/events",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         setEventName("");

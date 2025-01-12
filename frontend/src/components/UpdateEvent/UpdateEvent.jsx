@@ -41,13 +41,16 @@ export default function UpdateEvent() {
     const data = { eventName, date, time, location };
 
     try {
-      const response = await fetch(`http://localhost:5000/events/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `https://event-planner-app-vhm3.onrender.com/events/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         alert("Event updated successfully");
