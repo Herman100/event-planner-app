@@ -11,7 +11,6 @@ export default function CreateEvent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = { eventName, date, time, location };
-    console.log("Data:", data);
 
     try {
       const response = await fetch(
@@ -31,8 +30,6 @@ export default function CreateEvent() {
         setTime("");
         setLocation("");
         alert("Event created successfully");
-        const result = await response.json();
-        console.log("Event created:", result);
       } else {
         console.error("Failed to create event");
       }

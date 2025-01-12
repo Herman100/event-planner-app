@@ -37,3 +37,7 @@
   padding: 0 10px;
   font-family: "Lobster", cursive;
 }
+
+.active a {
+  color: #e59f26;
+}

@@ -39,11 +39,11 @@ export default function ViewEvents() {
     setSortCriteria(e.target.value);
   };
 
-  const sortedEvents = [...events].sort((a, b) => {
+  const sortedEvents = [...events].sort((eventA, eventB) => {
     if (sortCriteria === "eventName") {
-      return a.eventName.localeCompare(b.eventName);
+      return eventA.eventName.localeCompare(eventB.eventName);
     } else {
-      return new Date(a.date) - new Date(b.date);
+      return new Date(eventA.date) - new Date(eventB.date);
     }
   });
 
