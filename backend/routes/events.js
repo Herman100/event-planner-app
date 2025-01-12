@@ -6,6 +6,7 @@ const router = express.Router();
 
 // Create a new event
 router.post("/", async (req, res) => {
+  console.log("Request Body:", req.body);
   try {
     const newEvent = new Event(req.body);
     await newEvent.save();
@@ -22,6 +23,16 @@ router.get("/", async (req, res) => {
     res.status(200).json(events);
   } catch (error) {
     res.status(500).json({ message: error.message });
+  }
+});
+
+// Get a single event
+router.get("/:id", async (req, res) => {
+  try {
+    const event = await Event.findById(req.params.id);
+    res.status(200).json(event);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
   }
 });
 

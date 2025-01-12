@@ -9,12 +9,12 @@ dotenv.config();
 
 const app = express();
 
-// routes
-app.use("/events", eventRoutes);
-
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+
+// routes
+app.use("/events", eventRoutes);
 
 const URI = process.env.MONGODB_URI;
 
