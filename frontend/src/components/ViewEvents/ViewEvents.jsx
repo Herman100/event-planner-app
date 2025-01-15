@@ -59,9 +59,12 @@ export default function ViewEvents() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/events/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `https://event-planner-app-vhm3.onrender.com/events/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (response.ok) {
         setEvents(events.filter((event) => event._id !== id));
       }
