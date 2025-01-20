@@ -7,9 +7,11 @@ export default function CreateEvent() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [location, setLocation] = useState("");
+  const [disabled, setDisabled] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setDisabled(true);
     const data = { eventName, date, time, location };
 
     try {
@@ -29,6 +31,7 @@ export default function CreateEvent() {
         setDate("");
         setTime("");
         setLocation("");
+        setDisabled(false);
         alert("Event created successfully");
       } else {
         console.error("Failed to create event");
@@ -81,7 +84,7 @@ export default function CreateEvent() {
             required
           />
         </div>
-        <button type="submit" className={styles.submit}>
+        <button type="submit" className={styles.submit} disabled={disabled}>
           Create Event
         </button>
       </form>
